@@ -1,0 +1,91 @@
+body {
+    text-align: center;
+    background-color: #FAEBD7;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: 120px 120px 120px;
+    grid-template-rows: 120px 120px 120px;
+    column-gap: 1ex;
+    row-gap: 1ex;
+    justify-content: center;
+    width: 100%;
+    outline-color: white;
+}
+
+.boardCell {
+    background-color: #979AB6;
+    border: 2px solid white;
+    border-radius: 30%;
+}
+
+#left {
+    width: 100px;
+    float: left;
+    background-color: #979AB6;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 40px;
+    margin: 10px;
+}
+#right {
+    width: 100px;
+    float: right;
+    background-color: #979AB6;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 40px;
+    margin: 10px;
+}
+p {
+    text-align: center;
+    color: #979AB6;
+    font-size: 50px;
+    font-style: oblique;
+    font-weight: bold;
+    word-spacing: normal;
+}
+h1 {
+    justify-content: center;
+    text-align: center;
+    color: #D3D3D3;
+}
+
+.boardCell:hover {
+    background: rgba(179, 165, 165, 0.5);
+    display: block;
+}
+
+#Reset {
+    background-color: #FAEBD7;
+    color: #D3D3D3;
+    font-size: 30px;
+    padding: 15px 32px;
+    border: 2px solid MediumTurquoise;
+    text-align: center;
+    margin: 30px 2px;
+    display: inline;
+    border-radius: 50px;
+}
+
+input {
+    display: flexbox;
+    border: 2px solid MediumTurquoise;
+    padding: 18px 15px;
+}
+
+@media screen and (max-width: 600px) {
+    #gameBoard {
+        overflow: auto;
+        width: 100%;
+        float: none;
+    }
+
+    #right,
+    #left {
+        overflow: auto;
+        width: 50%;
+        float: center;
+    }
+}
