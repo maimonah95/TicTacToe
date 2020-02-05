@@ -14,7 +14,8 @@ var players = [{
 let count = 0; //Count the movement
 let switching = 1; //this to switch the player 
 
-$('.boardCell').on('click', function () {
+$('.boardCell').on('click', twoPlayers);
+function twoPlayers() {
 
          Pname();
 
@@ -38,9 +39,8 @@ $('.boardCell').on('click', function () {
                });
                // put it inside the Cell in the game board
                $(this).text('X');
+               count++;
                checkWin('X', players[0]);
-              
-                 count++;
                  //change to player 2
                  switching = 0;
                   } else {
@@ -53,9 +53,8 @@ $('.boardCell').on('click', function () {
                  });
                   // put it inside the Cell in the game board
                   $(this).text('O');
-                  checkWin('O', players[1]);
-
                   count++;
+                  checkWin('O', players[1]);
                   //change to player 1
                   switching = 1;
                   }
@@ -71,10 +70,9 @@ $('.boardCell').on('click', function () {
                     console.log("woooo");
                     $('h1').text(players[0].name + "&" + players[1].name + " : Tie");
                     tieGame();
-                
                     init();
                 }
-            });
+            };
     
     //function check if win 
     function checkWin(playChar, nameOfPlayer) {
@@ -98,71 +96,44 @@ $('.boardCell').on('click', function () {
 
              //1. check posibility
              //2.if win -> 
-             //1. show msg , 
-             //2.increase counter of the plyer (why? if he/she diside to playe multible game ),
-             //3.display msg in counter box(Each player has a box).
-             //4. clear board game 
-             //why we dont call init()function? we want keep track with players counter
+             //1.call initWithRounds()
          if (checkValue0 === playChar && checkValue1 === playChar && checkValue2 === playChar) {
              winGame();
-             $('h1').text(nameOfPlayer.name + " : win");
-             nameOfPlayer.Counter = nameOfPlayer.Counter + 1;
-             $('#right').text(players[0].name + ' : ' + players[0].Counter);
-             $('#left').text(players[1].name + ' : ' + players[1].Counter);
-             $(".boardCell").text('');
-    }else if (checkValue3 === playChar && checkValue4 === playChar && checkValue5 === playChar) {
+             initWithRounds(nameOfPlayer);
+            }else if (checkValue3 === playChar && checkValue4 === playChar && checkValue5 === playChar) {
              winGame();
-             $('h1').text(nameOfPlayer.name + " : win");
-             nameOfPlayer.Counter = nameOfPlayer.Counter + 1;
-             $('#right').text(players[0].name + ' : ' + players[0].Counter);
-             $('#left').text(players[1].name + ' : ' + players[1].Counter);
-             $(".boardCell").text('');
-
-    } else if (checkValue6 === playChar && checkValue7 === playChar && checkValue8 === playChar) {
+             initWithRounds(nameOfPlayer);
+            } else if (checkValue6 === playChar && checkValue7 === playChar && checkValue8 === playChar) {
              winGame();
-             $('h1').text(nameOfPlayer.name + " : win");
-             nameOfPlayer.Counter = nameOfPlayer.Counter + 1;
-             $('#right').text(players[0].name + ' : ' + players[0].Counter);
-             $('#left').text(players[1].name + ' : ' + players[1].Counter);
-             $(".boardCell").text('');
-    } else if (checkValue0 === playChar && checkValue3 === playChar && checkValue6 === playChar) {
+             initWithRounds(nameOfPlayer);
+            } else if (checkValue0 === playChar && checkValue3 === playChar && checkValue6 === playChar) {
              winGame();
-             $('h1').text(nameOfPlayer.name + " : win");
-             nameOfPlayer.Counter = nameOfPlayer.Counter + 1;
-             $('#right').text(players[0].name + ' : ' + players[0].Counter);
-             $('#left').text(players[1].name + ' : ' + players[1].Counter);
-             $(".boardCell").text('');
-    } else if (checkValue1 === playChar && checkValue4 === playChar && checkValue7 === playChar) {
+             initWithRounds(nameOfPlayer);
+            } else if (checkValue1 === playChar && checkValue4 === playChar && checkValue7 === playChar) {
              winGame();
-             $('h1').text(nameOfPlayer.name + " : win");
-             nameOfPlayer.Counter = nameOfPlayer.Counter + 1;
-             $('#right').text(players[0].name + ' : ' + players[0].Counter);
-             $('#left').text(players[1].name + ' : ' + players[1].Counter);
-             $(".boardCell").text('');
-    } else if (checkValue2 === playChar && checkValue5 === playChar && checkValue8 === playChar) {
+             initWithRounds(nameOfPlayer);
+            } else if (checkValue2 === playChar && checkValue5 === playChar && checkValue8 === playChar) {
              winGame();
-             $('h1').text(nameOfPlayer.name + " : win");
-             nameOfPlayer.Counter = nameOfPlayer.Counter + 1;
-             $('#right').text(players[0].name + ' : ' + players[0].Counter);
-             $('#left').text(players[1].name + ' : ' + players[1].Counter);
-             $(".boardCell").text('');
-    } else if (checkValue0 === playChar && checkValue4 === playChar && checkValue8 === playChar) {
+             initWithRounds(nameOfPlayer);
+            } else if (checkValue0 === playChar && checkValue4 === playChar && checkValue8 === playChar) {
              winGame();
-             $('h1').text(nameOfPlayer.name + " : win");
-             nameOfPlayer.Counter = nameOfPlayer.Counter + 1;
-             $('#right').text(players[0].name + ' : ' + players[0].Counter);
-             $('#left').text(players[1].name + ' : ' + players[1].Counter);
-             $(".boardCell").text('');
-    } else if (checkValue2 === playChar && checkValue4 === playChar && checkValue6 === playChar) {
+             initWithRounds(nameOfPlayer);
+            } else if (checkValue2 === playChar && checkValue4 === playChar && checkValue6 === playChar) {
              winGame();
-             $('h1').text(nameOfPlayer.name + " : win");
-             nameOfPlayer.Counter = nameOfPlayer.Counter + 1;
-             $('#right').text(players[0].name + ' : ' + players[0].Counter);
-             $('#left').text(players[1].name + ' : ' + players[1].Counter);
-             $(".boardCell").text('');
-    } else {
+             initWithRounds(nameOfPlayer);
+            } else {
         console.log("lose");
-    }
+            }
+}
+
+//this function  , Reset the board + count 'give Each cell null '(start new game whithout  player counter ).
+function initWithRounds(nameOfPlayer) {
+    count = 0;
+    $('h1').text(nameOfPlayer.name + " : win");
+    nameOfPlayer.Counter = nameOfPlayer.Counter + 1;
+    $('#right').text(players[0].name + ' : ' + players[0].Counter);
+    $('#left').text(players[1].name + ' : ' + players[1].Counter);
+    $(".boardCell").text('');
 }
 
 //this function ,When click Reset button , Reset the board(start new game).
@@ -170,6 +141,8 @@ function init() {
     count = 0;
     players[0].Counter = 0;
     players[1].Counter = 0;
+      players[0].name = '';
+      players[1].name = '';
     console.log('count  :' + count);
     console.log('count 1 :' + players[0].Counter);
     console.log('count 2 :' + players[1].Counter);

@@ -1,4 +1,11 @@
 # TicTacToe
+ 
+ Tic tac toe is a game played by two players .
+ The players alternate marking X and O within the nine squares of the grid, each intending to create a row of three marks either horizontally, vertically or diagonally.
+  
+Goal:
+The goal of this game is to be the first one who draws a row of three marks either horizontally, vertically or diagonally.
+
 
 ## technologies used
 ### Browsers:
@@ -29,11 +36,35 @@ Structured approach
 * As a user, I should be able to play the game again without refreshing the page.
 * As a user, I should be able to play multiple game rounds.
 * As a user, I can Write my name.
-* As a user, I can play from  from a mobile phone.
+* As a user, I can play  from a mobile phone.
+* As a user, I can play with AI 
 
-### how the Player win?
+### how the Player win?////////
 
+## Functions 
+#### checkWin(playChar , nameOfPlayer):
+it has two parameters .one  for player and the second for the character of the player(X or O).
+This function check if the player win
+player  Win probability:
+* [0, 1, 2],[3, 4, 5],[6, 7, 8],horizontal .
+* [0, 3, 6], [1, 4, 7], [2, 5, 8],vertical.
+* [0, 4, 8], [2, 4, 6]]diagonal .
+#### initWithRounds(nameOfPlayer):
+This function has one parameter .the winner information.
+* Reset the counter, 
+* remove any value in a Cell
+* display Winning message .
+* add to winner counter .
+* modify players counter.
+#### init():
+This function for Reset Every Things in the game.
+* players counter.
+* counter .
+*  players Name.
+* board Cell
+#### name():
+This function to decler the names of the players.
+ ### My  favorite functions://////////
 
+ 
 
- ### My  favorite functions:
- when the player 
