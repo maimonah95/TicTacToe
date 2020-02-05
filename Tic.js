@@ -126,18 +126,6 @@ console.log('hi 2 playe');
             document.getElementById('cell-4').style.color = 'black';
             document.getElementById('cell-4').style.fontSize = '90px';
 
-        } else if (document.getElementById('cell-0').innerText === '') {
-
-            document.getElementById('cell-0').innerText = 'O';
-            document.getElementById('cell-0').style.color = 'black';
-            document.getElementById('cell-0').style.fontSize = '90px';
-
-        } else if (document.getElementById('cell-6').innerText === '') {
-
-            document.getElementById('cell-6').innerText = 'O';
-            document.getElementById('cell-6').style.color = 'black';
-            document.getElementById('cell-6').style.fontSize = '90px';
-
         } else if (document.getElementById('cell-2').innerText === '') {
 
             document.getElementById('cell-2').innerText = 'O';
@@ -150,21 +138,34 @@ console.log('hi 2 playe');
             document.getElementById('cell-8').style.color = 'black';
             document.getElementById('cell-8').style.fontSize = '90px';
 
+        } else if (document.getElementById('cell-0').innerText === '') {
+
+            document.getElementById('cell-0').innerText = 'O';
+            document.getElementById('cell-0').style.color = 'black';
+            document.getElementById('cell-0').style.fontSize = '90px';
+
+        } else if (document.getElementById('cell-6').innerText === '') {
+
+            document.getElementById('cell-6').innerText = 'O';
+            document.getElementById('cell-6').style.color = 'black';
+            document.getElementById('cell-6').style.fontSize = '90px';
+
         } else {
-            while (nulCell) {
-                let randomPlace = Math.floor(Math.random() * 9);
-                let getCell = 'cell-' + randomPlace;
-                  if (document.getElementById(getCell).innerText === '') {
-                      console.log('woooooo' + document.getElementById(getCell).innerText);
-                      document.getElementById(getCell).innerText = 'O';
-                      document.getElementById(getCell).style.color = 'black';
-                      document.getElementById(getCell).style.fontSize = '90px';
-                      console.log($(getCell).text());
-                      nulCell = false;}
-                   }
-                   nulCell = true;
-                   }
-                   };
+             while (nulCell) {
+                 let randomPlace = Math.floor(Math.random() * 9);
+                 let getCell = 'cell-' + randomPlace;
+                 if (document.getElementById(getCell).innerText === '') {
+                     console.log('woooooo' + document.getElementById(getCell).innerText);
+                     document.getElementById(getCell).innerText = 'O';
+                     document.getElementById(getCell).style.color = 'black';
+                     document.getElementById(getCell).style.fontSize = '90px';
+                     console.log($(getCell).text());
+                     nulCell = false;
+                 }
+             }
+             nulCell = true;
+             }
+             };
     //function check if player win  
     function checkWin(playChar, nameOfPlayer) {
             //winning posibility 

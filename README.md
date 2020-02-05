@@ -7,20 +7,22 @@ Goal:
 The goal of this game is to be the first one who draws a row of three marks either horizontally, vertically or diagonally.
 
 
-## technologies used
-### Browsers:
- Google Chrome
+## technologies used:
+### Browsers 
+(Google Chrome)
 
 ### HTML 
 ### CSS
 ### Programming Languages
- Javascript 
+ (Javascript)
  ### Libraries
   * jQuery : jQuery is a fast JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation.
+  
   * DOM :The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. 
+
 ### approach taken To do the Project:
 
-Structured approach
+
  ### wireframes:
 
  A wireframe is a layout of a web page that demonstrates what interface elements will exist on key pages. 
@@ -44,12 +46,13 @@ Structured approach
 * As a user, I can play with AI 
 
 ### how the Player win?
+If he/she draws a row of three marks either horizontally, vertically or diagonally.
 
 First check horizontally if all three Cell has same Character.
 then  check vertical if all three Cell has same Character.
 then  check two diagonals if all three Cell has same Character.
 
-## Functions 
+## Functions :
 #### checkWin(playChar , nameOfPlayer):
 it has two parameters .one  for player and the second for the character of the player(X or O).
 This function check if the player win
@@ -71,7 +74,7 @@ This function for Reset Every Things in the game.
 *  players Name.
 * board Cell
 #### Pname():
-This function to decler the names of the players.
+This function to declere the names of the players.
  
  #### twoPlayers():
 
@@ -93,6 +96,13 @@ allow the computer to choose where to play
     window.location.href = 'AI.html';
 });
   To change between two pages
+## strategy in AI :
+
+how computer move: 
+* First will check if there is a value  in the center cell. if No will set inside it .
+if yes it will check the corners.
+or will put it randomlly.
+![Getting Started](strategy.png)
 
   ## what is Next ?
 
