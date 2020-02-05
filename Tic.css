@@ -1,3 +1,4 @@
+
 body {
     text-align: center;
     background-color: #FAEBD7;
@@ -12,6 +13,7 @@ body {
     justify-content: center;
     width: 100%;
     outline-color: white;
+
 }
 
 .boardCell {
@@ -19,12 +21,30 @@ body {
     border: 2px solid white;
     border-radius: 30%;
 }
+.boardCell:hover {
+    background: rgba(179, 165, 165, 0.5);
+    display: block;
+    background-image: url('https://media.giphy.com/media/SqrkyzPQWdYc4z05CP/200w_d.gif');
+     background-size: cover;
 
+}
+.AIboardCell {
+    background-color: #979AB6;
+    border: 2px solid white;
+    border-radius: 30%;
+}
+
+.AIboardCell:hover {
+    background: rgba(179, 165, 165, 0.5);
+    display: block;
+     background-image: url('https://media.giphy.com/media/SqrkyzPQWdYc4z05CP/200w_d.gif');
+     background-size: cover;
+}
 #left {
     width: 100px;
     float: left;
     background-color: #979AB6;
-    border-radius: 50%;
+    border-radius: 10%;
     border: 2px solid white;
     padding: 40px;
     margin: 10px;
@@ -33,18 +53,23 @@ body {
     width: 100px;
     float: right;
     background-color: #979AB6;
-    border-radius: 50%;
+    border-radius: 10%;
     border: 2px solid white;
     padding: 40px;
     margin: 10px;
 }
+#hder {
+    display: flex;
+    justify-content: center;
+}
 p {
-    text-align: center;
-    color: #979AB6;
-    font-size: 50px;
-    font-style: oblique;
-    font-weight: bold;
-    word-spacing: normal;
+        text-align: center;
+        color: #979AB6;
+        font-size: 50px;
+        font-style: oblique;
+        font-weight: bold;
+        word-spacing: normal;
+
 }
 h1 {
     justify-content: center;
@@ -52,10 +77,6 @@ h1 {
     color: #D3D3D3;
 }
 
-.boardCell:hover {
-    background: rgba(179, 165, 165, 0.5);
-    display: block;
-}
 
 #Reset {
     background-color: #FAEBD7;
@@ -63,10 +84,22 @@ h1 {
     font-size: 30px;
     padding: 15px 32px;
     border: 2px solid MediumTurquoise;
-    text-align: center;
-    margin: 30px 2px;
-    display: inline;
+    margin: 40px 10px;
+    /* border-radius: 50px; */
+}
+
+#switchGameAI,
+#switchGame {
+     align-self: center;
+     position: absolute;
+    right: 5px;
+    background-color: #FAEBD7;
+    color: #D3D3D3;
+    font-size: 20px;
+    border: 2px solid MediumTurquoise;
     border-radius: 50px;
+    padding: 10px 10px;
+    
 }
 
 input {

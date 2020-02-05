@@ -14,9 +14,18 @@ var players = [{
 let count = 0; //Count the movement
 let switching = 1; //this to switch the player 
 
+//witch between 2 pages ( play with AI or another player)
+$('#switchGameAI').click(function () {
+    window.location.href = 'tic.html';
+});
+$('#switchGame').click(function () {
+    window.location.href = 'AI.html';
+});
+
+// 
 $('.boardCell').on('click', twoPlayers);
 function twoPlayers() {
-
+console.log('hi 2 playe');
          Pname();
 
     $('#right').text(players[0].name + ' : ' + players[0].Counter);
@@ -34,7 +43,7 @@ function twoPlayers() {
                $('h1').text(players[1].name + ' Turn ');
                //change  css
                $(this).css({
-                   'color': '#5e5e5e ',
+                   'color': 'black', //#5e5e5e
                    'font-size': '100px'
                });
                // put it inside the Cell in the game board
@@ -48,8 +57,8 @@ function twoPlayers() {
                  //show a message 
                 $('h1').text(players[0].name + ' Turn ');
                  $(this).css({
-                     'color': 'seashell ',
-                     'font-size': '80px'
+                     'color': 'black ', //seashell
+                     'font-size': '90px'
                  });
                   // put it inside the Cell in the game board
                   $(this).text('O');
@@ -59,13 +68,6 @@ function twoPlayers() {
                   switching = 1;
                   }
                 }
-             $(this).hover(function () {
-                if ($(this).text() === 'X') {
-                    $(this).css("background-color", "#FFFAF0");
-                } else {
-                    $(this).css("background-color", "#808080"); //"#D3D3D3"
-                    }
-                });
                 if (count >= 9) {
                     console.log("woooo");
                     $('h1').text(players[0].name + "&" + players[1].name + " : Tie");
@@ -73,8 +75,97 @@ function twoPlayers() {
                     init();
                 }
             };
-    
-    //function check if win 
+     //
+     $('.AIboardCell').on('click', AI);
+    function AI() {
+        Pname();
+        players[1].name = 'computer';
+        $('#right').text(players[0].name + ' : ' + players[0].Counter);
+        $('#left').text(players[1].name + ' : ' + players[1].Counter);
+        //
+        if ($(this).text() !== '') {
+            console.log('this cell taken');
+            return;
+        } else {
+            $('h1').text(players[0].name + ' Turn ');
+            $(this).css({
+                'color': 'black ',
+                'font-size': '100px'
+            });
+            // put it inside the Cell
+            $(this).text('X');
+            count++;
+            //check if win
+            checkWin('X', players[0]);
+            
+            playWithAI();
+            //setTimeout(playWithAI, 500);
+            count++;
+            checkWin('O', players[1]);
+        }
+
+             if (count >= 9) {
+                 console.log("woooo");
+                 $('h1').text(players[0].name + "&" + players[1].name + " : Tie");
+                 $(".boardCell").text('');
+                 $(".AIboardCell").text('');
+                 count = 0;
+                 tieGame();
+             }
+
+    }
+//1. Check the middle 
+//2. Check the corner cells
+//3.put it randomlly
+    function playWithAI() {
+        console.log('hi AI');
+        let nulCell = true;
+        if (document.getElementById('cell-4').innerText === '') {
+
+            document.getElementById('cell-4').innerText = 'O';
+            document.getElementById('cell-4').style.color = 'black';
+            document.getElementById('cell-4').style.fontSize = '90px';
+
+        } else if (document.getElementById('cell-0').innerText === '') {
+
+            document.getElementById('cell-0').innerText = 'O';
+            document.getElementById('cell-0').style.color = 'black';
+            document.getElementById('cell-0').style.fontSize = '90px';
+
+        } else if (document.getElementById('cell-6').innerText === '') {
+
+            document.getElementById('cell-6').innerText = 'O';
+            document.getElementById('cell-6').style.color = 'black';
+            document.getElementById('cell-6').style.fontSize = '90px';
+
+        } else if (document.getElementById('cell-2').innerText === '') {
+
+            document.getElementById('cell-2').innerText = 'O';
+            document.getElementById('cell-2').style.color = 'black';
+            document.getElementById('cell-2').style.fontSize = '90px';
+
+        } else if (document.getElementById('cell-8').innerText === '') {
+
+            document.getElementById('cell-8').innerText = 'O';
+            document.getElementById('cell-8').style.color = 'black';
+            document.getElementById('cell-8').style.fontSize = '90px';
+
+        } else {
+            while (nulCell) {
+                let randomPlace = Math.floor(Math.random() * 9);
+                let getCell = 'cell-' + randomPlace;
+                  if (document.getElementById(getCell).innerText === '') {
+                      console.log('woooooo' + document.getElementById(getCell).innerText);
+                      document.getElementById(getCell).innerText = 'O';
+                      document.getElementById(getCell).style.color = 'black';
+                      document.getElementById(getCell).style.fontSize = '90px';
+                      console.log($(getCell).text());
+                      nulCell = false;}
+                   }
+                   nulCell = true;
+                   }
+                   };
+    //function check if player win  
     function checkWin(playChar, nameOfPlayer) {
             //winning posibility 
             //   0 | 1 | 2
@@ -95,8 +186,8 @@ function twoPlayers() {
              let checkValue8 = $('#cell-8').text();
 
              //1. check posibility
-             //2.if win -> 
-             //1.call initWithRounds()
+             //2.if Condition true -> 
+             //1.call initWithRounds() 
          if (checkValue0 === playChar && checkValue1 === playChar && checkValue2 === playChar) {
              winGame();
              initWithRounds(nameOfPlayer);
@@ -134,6 +225,7 @@ function initWithRounds(nameOfPlayer) {
     $('#right').text(players[0].name + ' : ' + players[0].Counter);
     $('#left').text(players[1].name + ' : ' + players[1].Counter);
     $(".boardCell").text('');
+     $(".AIboardCell").text('');
 }
 
 //this function ,When click Reset button , Reset the board(start new game).
@@ -143,12 +235,11 @@ function init() {
     players[1].Counter = 0;
       players[0].name = '';
       players[1].name = '';
-    console.log('count  :' + count);
-    console.log('count 1 :' + players[0].Counter);
-    console.log('count 2 :' + players[1].Counter);
+
     $('#right').text(players[0].name + ' : ' + players[0].Counter);
     $('#left').text(players[1].name + ' : ' + players[1].Counter);
-    return $(".boardCell").text('');
+     $(".boardCell").text('');
+     $(".AIboardCell").text('');
 
 }
 $('#Reset').on('click', init);
@@ -189,5 +280,3 @@ $('#Reset').on('click', init);
         function tieGame() {
            $('audio#tie')[0].play()
         };
-
-

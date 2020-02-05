@@ -16,18 +16,22 @@ The goal of this game is to be the first one who draws a row of three marks eith
 ### Programming Languages
  Javascript 
  ### Libraries
- jQuery
+  * jQuery : jQuery is a fast JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation.
+  * DOM :The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. 
 ### approach taken To do the Project:
+
 Structured approach
  ### wireframes:
+
  A wireframe is a layout of a web page that demonstrates what interface elements will exist on key pages. 
  ![Getting Started](XO.png)
 
  ### user stories :
+
   what is user stories :natural language description of one or more features of a software system.
 
   user story :
- * As a user, I should be able to start a new tic tac toe game.
+* As a user, I should be able to start a new tic tac toe game.
 * As a user, I should be able to click on a square to add X first and then O, and so on.
 * As a user, I should be shown a message after each turn for if I win, lose, tie or who's turn it is next.
 * As a user, I should not be able to click the same square twice.
@@ -39,7 +43,11 @@ Structured approach
 * As a user, I can play  from a mobile phone.
 * As a user, I can play with AI 
 
-### how the Player win?////////
+### how the Player win?
+
+First check horizontally if all three Cell has same Character.
+then  check vertical if all three Cell has same Character.
+then  check two diagonals if all three Cell has same Character.
 
 ## Functions 
 #### checkWin(playChar , nameOfPlayer):
@@ -62,9 +70,35 @@ This function for Reset Every Things in the game.
 * counter .
 *  players Name.
 * board Cell
-#### name():
+#### Pname():
 This function to decler the names of the players.
- ### My  favorite functions://////////
+ 
+ #### twoPlayers():
+
+allow two players to play consecutive.
+
+#### AI():
+
+allow the player to play with computer consecutive.
+
+#### playWithAI():
+
+allow the computer to choose where to play 
+ ##### anonymous function:
+
+ ('#switchGameAI').click(function () {
+    window.location.href = 'tic.html';
+});
+('#switchGame').click(function () {
+    window.location.href = 'AI.html';
+});
+  To change between two pages
+
+  ## what is Next ?
+
+  Improve AI .
+
+
 
  
 
