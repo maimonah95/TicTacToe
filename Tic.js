@@ -16,7 +16,7 @@ let switching = 1; //this to switch the player
 
 //witch between 2 pages ( play with AI or another player)
 $('#switchGameAI').click(function () {
-    window.location.href = 'tic.html';
+    window.location.href = 'index.html';
 });
 $('#switchGame').click(function () {
     window.location.href = 'AI.html';
