@@ -72,7 +72,8 @@ console.log('hi 2 playe');
                     console.log("woooo");
                     $('h1').text(players[0].name + "&" + players[1].name + " : Tie");
                     tieGame();
-                    init();
+                 $(".boardCell").text('');
+                 $(".AIboardCell").text('');
                 }
             };
      //
