@@ -45,6 +45,27 @@ The goal of this game is to be the first one who draws a row of three marks eith
 * As a user, I can play  from a mobile phone.
 * As a user, I can play with AI 
 
+## Development process:
+
+**Planning:** start thinking how the game is work and how the players win.
+
+**Analysis and design :**
+
+Design wireframes and write user story
+
+**Implement:** 
+build functions and pages 
+Start with html -> css -> js 
+
+**Testing:** 
+test each function as a unit.
+ test all the js.file , and system testing .
+And finally performance testings.
+The goals of this step to find bugs and fix it.
+
+**Maintenance :**
+
+
 ### how the Player win?
 If he/she draws a row of three marks either horizontally, vertically or diagonally.
 
