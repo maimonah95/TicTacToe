@@ -1,7 +1,7 @@
 console.log('TEST TEST!!');
 
 //This object to create the players
-var players = [{
+let  players = [{
         name: '',
         Counter: 0
     },
@@ -120,40 +120,45 @@ console.log('hi 2 playe');
 //3.put it randomlly
     function playWithAI() {
         console.log('hi AI');
+        const cel4 = document.getElementById('cell-4');
+        const cel0 = document.getElementById('cell-0');
+        const cel2 = document.getElementById('cell-2');
+        const cel8 = document.getElementById('cell-8');
+        const cel6 = document.getElementById('cell-6');
         let nulCell = true;
-        if (document.getElementById('cell-4').innerText === '') {
+        if (cel4.innerText === '') {
 
-            document.getElementById('cell-4').innerText = 'O';
-            document.getElementById('cell-4').style.color = 'black';
-            document.getElementById('cell-4').style.fontSize = '90px';
+            cel4.innerText = 'O';
+            cel4.style.color = 'black';
+            cel4.style.fontSize = '90px';
 
-        } else if (document.getElementById('cell-2').innerText === '') {
+        } else if (cel2.innerText === '') {
 
-            document.getElementById('cell-2').innerText = 'O';
-            document.getElementById('cell-2').style.color = 'black';
-            document.getElementById('cell-2').style.fontSize = '90px';
+            cel2.innerText = 'O';
+            cel2.style.color = 'black';
+            cel2.style.fontSize = '90px';
 
-        } else if (document.getElementById('cell-8').innerText === '') {
+        } else if (cel8.innerText === '') {
 
-            document.getElementById('cell-8').innerText = 'O';
-            document.getElementById('cell-8').style.color = 'black';
-            document.getElementById('cell-8').style.fontSize = '90px';
+            cel8.innerText = 'O';
+            cel8.style.color = 'black';
+            cel8.style.fontSize = '90px';
 
-        } else if (document.getElementById('cell-0').innerText === '') {
+        } else if (cel0.innerText === '') {
 
-            document.getElementById('cell-0').innerText = 'O';
-            document.getElementById('cell-0').style.color = 'black';
-            document.getElementById('cell-0').style.fontSize = '90px';
+            cel0.innerText = 'O';
+            cel0.style.color = 'black';
+            cel0.style.fontSize = '90px';
 
-        } else if (document.getElementById('cell-6').innerText === '') {
+        } else if (cel6.innerText === '') {
 
-            document.getElementById('cell-6').innerText = 'O';
-            document.getElementById('cell-6').style.color = 'black';
-            document.getElementById('cell-6').style.fontSize = '90px';
+            cel6.innerText = 'O';
+            cel6.style.color = 'black';
+            cel6.style.fontSize = '90px';
 
         } else {
              while (nulCell) {
-                 let randomPlace = Math.floor(Math.random() * 9);
+                 const randomPlace = Math.floor(Math.random() * 9);
                  let getCell = 'cell-' + randomPlace;
                  if (document.getElementById(getCell).innerText === '') {
                      console.log('woooooo' + document.getElementById(getCell).innerText);
@@ -177,15 +182,15 @@ console.log('hi 2 playe');
             // [0, 3, 6], [1, 4, 7], [2, 5, 8], //vertical
             // [0, 4, 8], [2, 4, 6]]; //diagonal 
             //Take the value from boardCell 
-             let checkValue0 = $('#cell-0').text();
-             let checkValue1 = $('#cell-1').text();
-             let checkValue2 = $('#cell-2').text();
-             let checkValue3 = $('#cell-3').text();
-             let checkValue4 = $('#cell-4').text();
-             let checkValue5 = $('#cell-5').text();
-             let checkValue6 = $('#cell-6').text();
-             let checkValue7 = $('#cell-7').text();
-             let checkValue8 = $('#cell-8').text();
+             const checkValue0 = $('#cell-0').text();
+             const checkValue1 = $('#cell-1').text();
+             const checkValue2 = $('#cell-2').text();
+             const checkValue3 = $('#cell-3').text();
+             const checkValue4 = $('#cell-4').text();
+             const checkValue5 = $('#cell-5').text();
+             const checkValue6 = $('#cell-6').text();
+             const checkValue7 = $('#cell-7').text();
+             const checkValue8 = $('#cell-8').text();
 
              //1. check posibility
              //2.if Condition true -> 

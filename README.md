@@ -26,7 +26,7 @@ The goal of this game is to be the first one who draws a row of three marks eith
  ### wireframes:
 
  A wireframe is a layout of a web page that demonstrates what interface elements will exist on key pages. 
- ![Getting Started](XO.png)
+ ![Getting Started](pic/XO.png)
 
  ### user stories :
 
@@ -73,57 +73,14 @@ First check horizontally if all three Cell has same Character.
 then  check vertical if all three Cell has same Character.
 then  check two diagonals if all three Cell has same Character.
 
-## Functions :
-#### checkWin(playChar , nameOfPlayer):
-it has two parameters .one  for player and the second for the character of the player(X or O).
-This function check if the player win
-player  Win probability:
-* [0, 1, 2],[3, 4, 5],[6, 7, 8],horizontal .
-* [0, 3, 6], [1, 4, 7], [2, 5, 8],vertical.
-* [0, 4, 8], [2, 4, 6]]diagonal .
-#### initWithRounds(nameOfPlayer):
-This function has one parameter .the winner information.
-* Reset the counter, 
-* remove any value in a Cell
-* display Winning message .
-* add to winner counter .
-* modify players counter.
-#### init():
-This function for Reset Every Things in the game.
-* players counter.
-* counter .
-*  players Name.
-* board Cell
-#### Pname():
-This function to declere the names of the players.
- 
- #### twoPlayers():
 
-allow two players to play consecutive.
-
-#### AI():
-
-allow the player to play with computer consecutive.
-
-#### playWithAI():
-
-allow the computer to choose where to play 
- ##### anonymous function:
-
- ('#switchGameAI').click(function () {
-    window.location.href = 'tic.html';
-});
-('#switchGame').click(function () {
-    window.location.href = 'AI.html';
-});
-  To change between two pages
 ## strategy in AI :
 
 how computer move: 
 * First will check if there is a value  in the center cell. if No will set inside it .
 if yes it will check the corners.
 or will put it randomlly.
-![Getting Started](strategy.png)
+![Getting Started](pic/strategy.png)
 
   ## what is Next ?
 
